@@ -1,14 +1,15 @@
 require 'rails_helper'
 
-describe Us do
-  let(:user) { create_user }
+describe Post do
+  let!(:user) { create_user }
+  let!(:post) { create_post }
 
   describe 'assocations' do
-    let(:post) { create_post }
+    let!(:comment) { create_comment }
 
-    describe '#posts' do
-      it 'returns all associated posts' do
-        expect(user.posts).to eq(Array(post))
+    describe '#comments' do
+      it 'returns all associated comments' do
+        expect(post.comments).to eq(Array(comment))
       end
     end
   end
