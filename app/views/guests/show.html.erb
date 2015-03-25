@@ -1,0 +1,15 @@
+<h1>"Its a Post!"</h1>
+<br>
+<h4> <%= "#{@post}" %> </h4>
+<br>
+<%= form_for [@post, @comment], url: comments_path do |f| %>
+  <%= f.label :reply  %>
+  <%= f.text_field :reply %>
+  <%= f.submit %>
+<% emd %>
+<br>
+<br>
+
+<% @comments.each do |comment| %>
+  <%= comment.reply %>
+<% end %>

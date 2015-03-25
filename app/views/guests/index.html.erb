@@ -1,0 +1,11 @@
+<h1>"Reddit 2.oh - Welcome to the Index of Users Post!"</h1>
+<h4>"To create, edit or delete your own posts and comments, please sign-in/sign-up."</h4>
+<br>
+<%= link_to "Sign Up", signup_path %>
+<%= link_to "Sign In", singin_path %>
+<br>
+<h5>"Posts"</h5>
+<br>
+<% @posts.each do |post|%>
+  <%= link_to post.content, guest_path(post) %>
+<% end %>
